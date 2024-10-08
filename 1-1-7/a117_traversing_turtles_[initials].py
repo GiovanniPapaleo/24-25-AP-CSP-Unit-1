@@ -18,13 +18,16 @@ for s in turtle_shapes:
 # set starting position
 startx = 0
 starty = 0
+direction = 90
 
 # deviate from origin
 for t in my_turtles:
   t.goto(startx, starty)
+  t.setheading(direction)
   t.pendown()
   t.right(45)
   t.forward(50)
+  direction = t.heading()
 
 # continue down original line
   startx = t.xcor()

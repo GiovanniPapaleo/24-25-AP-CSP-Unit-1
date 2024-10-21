@@ -22,12 +22,18 @@ t.circle(1100, 360)
 t.end_fill()
 
 # create main galaxy
-
-
+t.fillcolor("purple")
+t.penup()
+t.goto(0,-150)
+t.pendown()
+t.begin_fill()
+t.circle(300,360)
+t.end_fill()
 
 # add and organize star positions
 t.fillcolor("white")
-t.pensize(3)
+t.pencolor("white")
+t.pensize(1)
 t.penup()
 t.goto(50,0)
 t.pendown()
@@ -37,7 +43,7 @@ for star in range(18):
     t.right(150)
     t.forward(120)
     t.pendown()
-    t.circle(5, 360)
+    t.circle(2, 360)
     t.end_fill()
 
 wn = turtle.Screen()

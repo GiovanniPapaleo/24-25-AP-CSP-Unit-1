@@ -1,6 +1,6 @@
 
 
-# PURPOSE: TO CREATE GALACTIC BODY
+# PURPOSE: TO CREATE WINDMILL
 import turtle
 
 screen = turtle.Screen()

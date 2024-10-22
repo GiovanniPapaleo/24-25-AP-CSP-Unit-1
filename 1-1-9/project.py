@@ -1,52 +1,58 @@
-# construct dark background
 
+
+# PURPOSE: TO CREATE GALACTIC BODY
 import turtle
 
-# creating turtle pen
-t = turtle.Turtle()
-t.speed(0)
-# set background origin pos
-t.penup()
-t.goto(0, -550)
-t.pendown()
-# set the fillcolor
-t.fillcolor("black")
+screen = turtle.Screen()
+screen.bgcolor('cyan')
+# CONFIGURATION
 
-# start the filling color
-t.begin_fill()
+# Variables list
+size = 30
+speed = 6
 
-# form circle
-t.circle(1100, 360)
+# Drawing tools
+drawer1 = turtle.Turtle()
+drawer2 = turtle.Turtle()
+drawer3 = turtle.Turtle()
+drawer4 = turtle.Turtle()
+drawerlist = [drawer1,drawer2,drawer3,drawer4]
 
-# ending the filling of the color
-t.end_fill()
 
-# create main galaxy
-t.fillcolor("purple")
-t.penup()
-t.goto(0,-150)
-t.pendown()
-t.begin_fill()
-t.circle(300,360)
-t.end_fill()
+spinvelocity = 0
+for drawer in drawerlist:
+  drawer.speed(0)
+  drawer.shape("square")
+  drawer.shapesize(stretch_wid=size,stretch_len=1)
+  drawer.left(45*spinvelocity)
+  spinvelocity += 1
 
-# add and organize star positions
-t.fillcolor("white")
-t.pencolor("white")
-t.pensize(1)
-t.penup()
-t.goto(50,0)
-t.pendown()
-for star in range(18):
-    t.begin_fill()
-    t.penup()
-    t.right(150)
-    t.forward(120)
-    t.pendown()
-    t.circle(2, 360)
-    t.end_fill()
+# MAIN PROGRAM
 
-wn = turtle.Screen()
-wn.mainloop()
+#windmill body
+turtle.fillcolor("red")
+turtle.right(180)
+turtle.begin_fill()
+turtle.circle(350,360,3)
+turtle.end_fill()
+
+# windmill branches configuration
+windmill = turtle.Pen()
+windmill.pencolor("white")
+windmill.fillcolor("white")
+windmill.begin_fill()
+windmill.width(20)
+windmill.speed(0)
+windmill.up()
+windmill.forward(size*10)
+windmill.down()
+windmill.left(90)
+turtle.end_fill()
+#windmill.circle(size*10)
+
+# windmill spin
+while True:
+  for drawer in drawerlist:
+    drawer.left(speed)
 
 

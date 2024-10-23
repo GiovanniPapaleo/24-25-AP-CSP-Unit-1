@@ -8,7 +8,7 @@ screen.bgcolor('cyan')
 # CONFIGURATION
 
 # Variables list
-size = 30
+size = 25
 speed = 6
 
 # Drawing tools
@@ -30,6 +30,7 @@ for drawer in drawerlist:
 # MAIN PROGRAM
 
 #windmill body
+turtle.speed(0)
 turtle.fillcolor("red")
 turtle.right(180)
 turtle.begin_fill()
@@ -48,11 +49,34 @@ windmill.forward(size*10)
 windmill.down()
 windmill.left(90)
 turtle.end_fill()
-#windmill.circle(size*10)
+
+# create land; grass
+turtle.speed(0)
+turtle.fillcolor("green")
+turtle.begin_fill()
+turtle.penup()
+turtle.goto(500,-350)
+turtle.right(45)
+turtle.circle(700,360,4)
+turtle.end_fill()
+
+# create sun
+turtle.speed(0)
+turtle.fillcolor("yellow")
+turtle.begin_fill()
+turtle.penup()
+turtle.goto(-350,400)
+turtle.circle(100,360)
+turtle.end_fill()
+turtle.hideturtle()
 
 # windmill spin
 while True:
   for drawer in drawerlist:
     drawer.left(speed)
+    
+
+
+
 
 
